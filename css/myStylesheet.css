@@ -1,0 +1,317 @@
+body{
+    font-size: 1.25vh;
+    font-family: "Geneva",sans-serif;
+    line-height: 4vh;
+    color: white;
+    transition: 0.6s;
+    background-color: rgb(229, 79, 248);
+    margin: 0 5%;
+}
+
+.bg{
+    z-index: -100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: hue;
+    opacity: 0.75;
+}
+
+.hidden{
+    display: none;
+}
+
+header{
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 15vh;
+    margin: 2% 0% 5% 0%;
+    z-index: 10;
+    mix-blend-mode: screen;
+    font-size: 1.3em;
+}
+
+#header{
+    display: flex;
+}
+
+.pgContainer{
+    flex: 2 2 0;
+}
+
+.pgHeader{
+    overflow: hidden;
+    width: 40%;
+} 
+
+main{
+    mix-blend-mode: normal;
+    z-index: 10;
+    clear: both;
+    position: relative;
+    width: 70%;
+    margin: 0 15%;
+}
+
+#sessionContainer{
+    background-color: rgba(40, 40, 40);
+    width: 100%;
+    min-height: 50vh;
+    overflow: scroll;
+    color: rgb(223, 226, 218);
+    padding: 5%;
+    margin-bottom: 5%;
+    /* box-shadow: ; */
+}
+
+#sessionHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#sessionHeader button{
+    height: fit-content;
+    opacity: 0.8;
+}
+
+#sessionHeader button:hover{
+    opacity: 1.0;
+    cursor: pointer;
+}
+
+#sessionContainer h2{
+    font-size: 2em;
+}
+
+#sessionContainer hr{
+    height: 3px;
+    background-color:rgba(216, 255, 139, 0.912);
+}
+
+#session{
+    font-size: 1.5em;
+}
+
+
+.author{
+    color:rgba(172, 255, 6, 0.912);
+}
+
+.active {
+    background-color: rgba(228, 230, 224, 0.493);
+    color: black;
+    border-radius: 5px;
+}
+
+h1{
+    color: black;
+    font-size: 2.25vw;
+    margin-bottom: 1%;
+}
+
+.expanded{
+    padding: 2%;
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0s, opacity 0.66s linear;
+}
+
+.projectDesc{
+    color: rgba(230, 247, 195, 0.85);
+    font-size: 1.15rem;
+    padding: 1.5%;
+}
+
+.terminalCursor{
+    font-size: 1.1em;
+    width: 100%;
+    width:fit-content;
+    color: orange;
+    background-color: orange;
+    vertical-align: middle;
+    padding: 0;
+    margin: 0;
+}
+.terminalHeader{
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    background-color: rgb(95, 91, 91);
+    z-index: 10;
+    color: rgb(184, 184, 184);
+    width: 100%;
+    height: 60px;
+    border-radius: 10px 10px 0 0;
+    text-align: left;
+}
+.terminalHeader p{
+    width: 90%;
+    display: inline-block;
+    text-align: center;
+}
+
+#toggleBtn{
+    width: 20px;
+    height: 20px;
+    margin-left: 1%;
+    border-radius: 50%;
+    border: none;
+    opacity: .85;
+}
+#toggleBtn:hover{
+    opacity: 1.0;
+}
+.mini{
+    background-color: rgb(221, 170, 0);
+}
+.maxi{
+    background-color: rgb(59, 179, 29);
+}
+.terminalBody p{
+    position: relative;
+    top: 60px;
+    margin: .5%;
+}
+.terminalBody{
+    margin: 0;
+    padding: .5% 4% 15% 2%;
+    line-height: 1.5em;
+    background-color: black;
+    /* box-shadow: 0 0 30px 20px rgb(169, 168, 168); */
+}
+#TS{
+    margin: 5% 0;
+    display: flex;
+    padding: 0 2%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: relative;
+}
+.sessionMini{
+    width: 20%;
+    padding: 2%;
+    height: auto;
+    flex-direction: column;
+    color: white;
+    opacity: 0;
+
+}
+.sessionSymbol{
+    padding: 0;
+    /* line-height: 3em;   */
+    font-size: 3em;
+}
+
+.sessionTitle{
+    font-size: 1rem;
+    line-height: 1rem;
+    margin-top: 50%;
+    transform: translate(0, -50%);
+}
+
+.sessionMini:hover{
+    color: rgba(34, 37, 27, 0.912);
+    cursor: pointer;
+    animation: fadeIn 5s forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0.0;
+    }
+    10% {
+        opacity: 0.2;
+    }
+    50% {opacity: 0.6;
+    }
+    95% {
+        opacity: 0.9;
+    }
+    100% {
+        copacity: 1.0;
+    }
+  }
+
+#terminal{
+    height: fit-content;
+    font-size: 1.5em;
+    font-weight: 400;
+    color: rgb(239, 102, 252);
+    background-color: none;
+    font-family: 'Courier New', Courier, monospace;;
+    border-radius: 10px;
+    max-height: 50vh;
+    overflow: scroll;
+}
+
+#misc{
+    position: fixed;
+    top: 30%;
+    left: 0;
+    cursor: pointer;
+}
+#misc button{
+    margin: 10% .5vw;
+    font-size: 1.2rem;
+    display: block;
+    background-color: transparent;
+    border: none;
+}
+#misc button:hover{
+    cursor: pointer;
+    color: white;
+}
+.highlight{
+    background-color: rgba(255, 255, 255, 0.898);
+    font-weight: 800;
+    padding: 0;
+    margin: 0;
+}
+
+#misc .selected{
+    color: rgba(172, 255, 6, 0.912);
+}
+.tilSection .title, a{
+    color: rgba(172, 255, 6, 0.912);
+    font-weight: 800;
+}
+.tilSection a{
+    text-decoration: none;
+    color: inherit;
+}
+.tilSection a:hover{
+    color: white;
+}
+
+.inspContainer p{
+    font-size: 1.1rem;
+    color: rgba(230, 247, 195, 0.85);
+}
+
+.grid{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.gridImg{
+    flex: 1 1 auto;
+    width: 30%;
+    margin: 5%;
+}
+
+.expanded{
+    display: block;
+    height: 50%;
+}
+
+.collapsed{
+    display: none;
+}

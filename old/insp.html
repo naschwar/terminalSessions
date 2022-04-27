@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>schwaz</title>
+    <link rel="stylesheet" href="css/myStylesheet.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+                <div class="schwazContainer"><img class="schwazHeader" src="media/schwazHeader.png" alt=""/></div> 
+                <div class="navContainer">
+                    <ul>
+                        <li class="nav-item">
+                            <a href=".">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="portfolio.html">Play</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="insp.html">TIL</a>
+                        </li>
+                    </ul> 
+                </div>
+        </nav>
+        <div>
+            <input type="checkbox" onclick="toggleBg(event)"> Less stimulation please</input>
+        </div>
+    </header>
+        <div id="inspShader" class="bg shaderContainer"></div>
+        <main class="inspCategory">
+           <h1>Today I'm Learning</h1>
+           <p>A collection of the resources and people I've been learning from recently.</p>
+
+            <div class="subsection">
+                <div class="header-cont"><h2>Reading:</h2></div>
+                <hr>
+                <ul>
+                    <li>"Captivating Technology: Race, Carceral Technoscience, and Liberatory Imagination in Everyday Life" <span class = "author">- Ruha Benjamin</span></li>
+                    <li>"Software For Artists Book: Building Better Realities" </li>
+                    <li>"The Age of Surveilance Capitalism"<span class = "author">- Shoshana Zuboff</span></li>
+                    <li><a href="https://branch.climateaction.tech/">Branch Magazine</a></li>
+                    <li>"Automating Inequality"<span class = "author">- Virginia Eubanks</span></li>
+                </ul>
+            </div>
+            <div class="subsection">
+                <div class="header-cont"><h2>Listening to:</h2></div>
+                <hr>
+                <ul>
+                    <li><a href="https://99percentinvisible.org">99% Invisible</a></li>
+                </ul>
+            </div> 
+            <div class="subsection">
+                <div class="header-cont"><h2>Watching:</h2></div>
+                <hr>
+                <ul>
+                    <li><a href="https://www.youtube.com/curiouslyminded">curiouslyminded</a></li>
+                    <li><a href="https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw">The Coding Train</a></li> 
+                </ul>
+            </div> 
+        </main> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+        <script id="vertexShader" type="x-shader/x-vertex">
+            void main() {
+                gl_Position = vec4( position, 1.0 );
+            }
+        </script>
+      
+        <script class="fragmentShader" type="x-shader/x-fragment" src="shader.frag"></script>
+        <script src="shader.js" type="text/javascript"></script>
+</body>
+</html>

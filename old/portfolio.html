@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>schwaz</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/myStylesheet.css">
+    <script src="index.js" type="text/javascript"></script>
+
+    <!-- <script src="myscript.js" type="text/javascript"></script> -->
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+                <div class="schwazContainer"><img class="schwazHeader" src="media/schwazHeader.png" alt=""/></div> 
+                <div class="navContainer">
+                    <ul>
+                        <li class="nav-item">
+                            <a href=".">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="portfolio.html">Play</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="insp.html">TIL</a>
+                        </li>
+                    </ul> 
+                </div>
+        </nav>
+        <div>
+            <input type="checkbox" onclick="toggleBg(event)"> Less stimulation please</input>
+        </div>
+    </header>
+    <div class="bg shaderContainer" id="portfolioShader"></div>
+    <main>
+        <div class="subsection" id="formlessness">
+            <h1 onclick="expandSection('formlessness')">Formlessness</h1>
+            <hr>
+            <div class="collapsed">
+                <p class="projectDesc">Formlessness is a series of GLSL shaders made while meditating on the fluidity of identity.<br>For me, reimaging the body as formless is a way of healing fractures created by the commodification of human experience. I wanted these shaders to showcase beauty that is evolving and at every moment reforming.</p>
+                <p class="codepen" data-height="500" data-width="500" data-theme-id="dark" data-default-tab="result" data-slug-hash="PoOKaep" data-user="naschwar" style="height: 50vh; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                    <span>See the Pen <a href="https://codepen.io/naschwar/pen/PoOKaep">
+                    Formlessness</a> by naschwar (<a href="https://codepen.io/naschwar">@naschwar</a>)
+                    on <a href="https://codepen.io">CodePen</a>.</span>
+                  </p>
+                  <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+            </div>
+        </div>
+        <div class="subsection" id="beepbop">
+            <h1 onclick="expandSection('beepbop')">Beep Bop</h1>
+            <hr>
+            <div class="collapsed">
+                <p class="projectDesc">Beep Bop is a homemade beet maker created with html, css, and javascript</p>
+                <p class="codepen" data-height="500" data-theme-id="dark" data-default-tab="result" data-slug-hash="GROMRzG" data-user="naschwar" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                    <span>See the Pen <a href="https://codepen.io/naschwar/pen/GROMRzG">
+                    Beep Bop</a> by naschwar (<a href="https://codepen.io/naschwar">@naschwar</a>)
+                    on <a href="https://codepen.io">CodePen</a>.</span>
+                  </p>
+                    <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+            </div>
+        </div>
+        <div class="subsection" id="ar">
+            <h1 onclick="expandSection('ar')">Augmenting Reality</h1>
+            <hr>
+            <div class="collapsed grid">
+                <p class="projectDesc">An exploration of augmented reality beginning with a class taken with the School For Poetic Computation. While making these, I reflected on the following questions: </p>
+                 <ul>
+                    <li class="projectDesc">What is lost in expanding physical space with new dimensions?</li>
+                    <li class="projectDesc">How can augmenting reality be used for healing?</li>
+                    <li class="projectDesc">How do we create augmented reality that does not lead to full decoupling from reality (i.e escapism for those with the privilige of not confronting dangerous physical conditions)?</li>
+                    <li class="projectDesc">How do we prevent augmented reality from recreating the systems of harm present in reality?</li>
+                </ul>
+                <img class ="gridImg" src="./media/gooey.PNG"/>
+                <img class ="gridImg" src="./media/clouds.jpg"/>
+            </div>
+        </div>
+        </main>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+        <script id="vertexShader" type="x-shader/x-vertex">
+            void main() {
+                gl_Position = vec4( position, 1.0 );
+            }
+        </script>
+        <script class="fragmentShader" type="x-shader/x-fragment" src="shader.frag"></script>
+        <script src="shader.js" type="text/javascript"></script>
+</body>
+</html>
+
