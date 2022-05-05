@@ -5,7 +5,7 @@ body{
     color: white;
     transition: 0.6s;
     background-color: rgb(229, 79, 248);
-    margin: 0 5%;
+    box-sizing: border-box;
 }
 
 .bg{
@@ -30,7 +30,7 @@ header{
     left: 0;
     width: 100%;
     height: 15vh;
-    margin: 2% 0% 5% 0%;
+    margin: 2% 5% 5% 0%;
     z-index: 10;
     mix-blend-mode: screen;
     font-size: 1.3em;
@@ -38,6 +38,7 @@ header{
 
 #header{
     display: flex;
+    padding-right: 3%;
 }
 
 .pgContainer{
@@ -54,13 +55,17 @@ main{
     z-index: 10;
     clear: both;
     position: relative;
+}
+
+.container{
+    box-sizing: border-box;
+    margin: 0 4% 4% 4%;
     width: 70%;
-    margin: 0 15%;
 }
 
 #sessionContainer{
-    background-color: rgba(40, 40, 40);
-    width: 100%;
+    background-color: 
+    rgba(67, 67, 67, 0.775);
     min-height: 50vh;
     overflow: scroll;
     color: rgb(223, 226, 218);
@@ -98,13 +103,8 @@ main{
     font-size: 1.5em;
 }
 
-
-.author{
-    color:rgba(172, 255, 6, 0.912);
-}
-
 .active {
-    background-color: rgba(228, 230, 224, 0.493);
+    background-color: rgba(111, 165, 2, 0.493);
     color: black;
     border-radius: 5px;
 }
@@ -145,54 +145,40 @@ h1{
     background-color: rgb(95, 91, 91);
     z-index: 10;
     color: rgb(184, 184, 184);
-    width: 100%;
+    width: 70%;
     height: 60px;
     border-radius: 10px 10px 0 0;
     text-align: left;
 }
-.terminalHeader p{
-    width: 90%;
-    display: inline-block;
-    text-align: center;
-}
 
-#toggleBtn{
-    width: 20px;
-    height: 20px;
-    margin-left: 1%;
-    border-radius: 50%;
-    border: none;
-    opacity: .85;
-}
-#toggleBtn:hover{
-    opacity: 1.0;
-}
-.mini{
-    background-color: rgb(221, 170, 0);
-}
-.maxi{
-    background-color: rgb(59, 179, 29);
-}
-.terminalBody p{
-    position: relative;
-    top: 60px;
-    margin: .5%;
-}
-.terminalBody{
-    margin: 0;
-    padding: .5% 4% 15% 2%;
-    line-height: 1.5em;
-    background-color: black;
-    /* box-shadow: 0 0 30px 20px rgb(169, 168, 168); */
-}
 #TS{
-    margin: 5% 0;
+    box-sizing: border-box;
     display: flex;
-    padding: 0 2%;
+    padding: 10% 5%;
     flex-wrap: wrap;
     justify-content: space-around;
     position: relative;
+    animation: morph 40s linear infinite;
+    left: 35%;  
+    transform: translate(-35%, 0);   
+    background-color: rgba(156, 199, 125, 0.727);
 }
+
+
+@keyframes morph{
+    0%, 100% {
+    border-radius: 50% 60% 75% 30% / 50% 40% 60% 50%;
+    width: 100%;
+    }
+    35% {
+        border-radius: 70% 30% 55% 50% / 70% 60% 90% 80%;
+        width: 80%;
+    }
+    65% {
+      border-radius: 100% 60% 65% 100% / 100% 100% 60% 70%;
+      width: 90%;
+    }
+  }
 .sessionMini{
     width: 20%;
     padding: 2%;
@@ -237,35 +223,112 @@ h1{
         copacity: 1.0;
     }
   }
-
-#terminal{
-    height: fit-content;
-    font-size: 1.5em;
-    font-weight: 400;
-    color: rgb(239, 102, 252);
-    background-color: none;
-    font-family: 'Courier New', Courier, monospace;;
-    border-radius: 10px;
-    max-height: 50vh;
-    overflow: scroll;
-}
-
 #misc{
     position: fixed;
-    top: 30%;
-    left: 0;
+    top: 15vh;
+    right: 1vw;
     cursor: pointer;
+    width: 16vw;
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+}
+#mainContainer{
+    overflow: hidden;
+    font-weight: 700;
+    color: black;
+    padding: 0 5%;
+    position: relative;
+    font-size: 1.2rem;
+}
+#blobs{
+    z-index: 0;
+}
+#mainBlob1{
+    overflow: visible;
+    animation: moveBlob 120s ease-in-out infinite;
+    position: absolute;
+}
+#mainBlob2{
+    overflow: visible;
+    animation: moveBlob2 120s ease-in-out infinite;
+    position: absolute;
+}
+
+@keyframes moveBlob {
+    0%, 100% {
+        transform: translate(10%, 10%);
+    }
+    10% {
+        transform: translate(15%, 15%);
+    }
+    20% {
+        transform: translate(25%, 30%);
+    }
+    40% {
+        transform: translate(30%, 45%);
+    }
+    60% {
+        transform: translate(50%, 65%);
+    }
+    70% {
+        transform: translate(40%, 40%);
+    }
+    85% {
+        transform: translate(20%, 30%);
+    }
+    95% {
+        transform: translate(15%, 15%);
+    }
+  }
+
+
+@keyframes moveBlob2 {
+    0%, 100% {
+        transform: translate(100%, 100%);
+    }
+    10% {
+        transform: translate(90%, 85%);
+    }
+    25% {
+        transform: translate(75%, 75%);
+    }
+    40% {
+        transform: translate(60%, 65%);
+    }
+    65% {
+        transform: translate(35%, 60%);
+    }
+    75% {
+        transform: translate(50%, 65%);
+    }
+    85% {
+        transform: translate(70%, 75%);
+    }
+    95% {
+        transform: translate(85%, 85%);
+    }
+  }
+
+#misc img{
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
 }
 #misc button{
-    margin: 10% .5vw;
-    font-size: 1.2rem;
-    display: block;
-    background-color: transparent;
+    box-sizing: border-box;
+    vertical-align: top;
+    display: inline-block;
     border: none;
+    z-index: 100;
+    background-color: transparent;
+    width: 49%;
+
 }
 #misc button:hover{
     cursor: pointer;
-    color: white;
+    filter: drop-shadow(10px 16px 25px rgba(172, 255, 6, 0.912));
 }
 .highlight{
     background-color: rgba(255, 255, 255, 0.898);
@@ -275,11 +338,16 @@ h1{
 }
 
 #misc .selected{
-    color: rgba(172, 255, 6, 0.912);
+    border: 3px dotted rgba(172, 255, 6, 0.912);
 }
+
+#containerBody{
+    z-index: 100;
+}
+
 .tilSection .title, a{
-    color: rgba(172, 255, 6, 0.912);
     font-weight: 800;
+    
 }
 .tilSection a{
     text-decoration: none;
@@ -287,6 +355,12 @@ h1{
 }
 .tilSection a:hover{
     color: white;
+}
+
+#tilContainer{
+    border-radius: 50%; 
+    background-color:  rgba(172, 255, 6, 0.398);
+    animation: morph 40s linear infinite;
 }
 
 .inspContainer p{

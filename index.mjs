@@ -28,35 +28,46 @@ function toggleBg(event){
 }  
 
 
-function toggleTerminal(event){
-    if(event.target.classList.contains("mini")){
-        document.querySelector("#terminal").style.display = "none";
-    }else{
-        document.querySelector("#terminal").style.display = "block";
-    }
-}  
+// function toggleTerminal(event){
+//     if(event.target.classList.contains("mini")){
+//         document.querySelector("#terminal").style.display = "none";
+//     }else{
+//         document.querySelector("#terminal").style.display = "block";
+//     }
+// }  
 
-function updateTerminal(event){
+function updateMainContainer(event){
     let page = event.target.id;
-    let prev = document.querySelector("#terminal .selected");
-    prev.classList.add("hidden");
-    prev.classList.remove("selected");
+    let prev = document.querySelector("#containerBody .selected");
+    if(prev){
+        prev.classList.add("hidden");
+        prev.classList.remove("selected");
+    }
     document.querySelector("#misc .selected").classList.remove("selected");
     event.target.classList.add("selected");
     let cont;
-    if(page == "til"){
+    if(page == "ts"){
+        document.getElementById("blobs").style.display = "none";
+        cont = document.getElementById("tsContainer");
+        document.querySelector("#containerBody h2").innerHTML = ""
+    }else if(page == "til"){
+        document.getElementById("blobs").style.display = "none";
         cont = document.getElementById("tilContainer");
-        document.querySelector("#terminal .terminalHeader p").innerHTML = "today i'm learning"
-    }else if(page == "welcome"){
-        cont = document.getElementById("introContainer");
-        document.querySelector("#terminal .terminalHeader p").innerHTML = "welcome to terminal sessions"
-    }else if(page == "abt"){
-        cont = document.getElementById("abtContainer");
-        document.querySelector("#terminal .terminalHeader p").innerHTML = "some more things about me"
-    }else if(page == "digital_garden"){
-        cont = document.getElementById("gardenContainer");
-        document.querySelector("#terminal .terminalHeader p").innerHTML = "more on digital gardens"
+        document.querySelector("#containerBody h2").innerHTML = "today i'm learning"
+    } else{
+        document.getElementById("blobs").style.display = "block";
+        if(page == "welcome"){
+            cont = document.getElementById("introContainer");
+            document.querySelector("#containerBody h2").innerHTML = "welcome to terminal sessions"
+        }else if(page == "abt"){
+            cont = document.getElementById("abtContainer");
+            document.querySelector("#containerBody h2").innerHTML = "some more things about me"
+        }else if(page == "digital_garden"){
+            cont = document.getElementById("gardenContainer");
+            document.querySelector("#containerBody h2").innerHTML = "more on digital gardens"
+        }
     }
+    
     if(cont){
         cont.classList.remove("hidden");
         cont.classList.add("selected");
@@ -87,14 +98,6 @@ function hideSession(event){
 }
 
 window.addEventListener('load', function(){
-    
-//     $.ajax({
-//         url: 'https://api.electricitymap.org/v3/carbon-intensity/latest?zone=DE -H auth-token: xnicolex',
-//         success: function(data){
-//             alert(data);
-//             //process the JSON data etc
-//         }
-// })
     sessionsDB = new localdb('sessionsDB');
     sessionsDB.dropTable('sessions');
     if(!sessionsDB.tableExists('sessions')){
@@ -107,13 +110,13 @@ window.addEventListener('load', function(){
     let introContainer = document.getElementById("introContainer");
     introContainer.classList.remove("hidden");    
     document.getElementById("bgCtrl").addEventListener('click',toggleBg);
-    document.getElementById("toggleBtn").addEventListener('click', toggleTerminal);
-    let miscItems = document.querySelectorAll("#misc button");
+    let miscItems = document.querySelectorAll("#misc img");
     miscItems.forEach(item => {
-        item.addEventListener('click', updateTerminal)
-    });
-    miscItems.forEach(item => {
-        item.addEventListener('click', updateTerminal);
+        item.addEventListener('click', (e)=>{
+            if(e.target === e.currentTarget){
+                updateMainContainer(e);
+            }
+        })
     });
     let sessions = Array.from(document.querySelectorAll(".sessionMini"));
     sessions.forEach(session => {

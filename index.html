@@ -18,7 +18,14 @@
             <div id="aboutShader" class="bg shaderContainer"></div>
         </header>
         <main>
-            <div id="sessionContainer" class="hidden">
+            <div id="misc">
+                <button><img id = "welcome" class="selected" src="./media/welcome.png"/></button>
+                <button><img id = "abt" src="./media/mailbox.png"/></button>
+                <button><img id = "til" src="./media/window.png"/></button>
+                <button><img id = "digital_garden" src="./media/plant.png"/></button>
+                <button><img id = "ts" src="./media/couch.png"/></button>
+            </div>
+            <div id="sessionContainer" class="hidden container">
                 <div id="sessionHeader">
                     <h2></h2>
                     <button>X</button>
@@ -27,79 +34,79 @@
                 <div id="session">  
                 </div>
             </div>
-            <div id="mainContainer">
-                <div id="misc">
-                    <button id = "welcome" class="selected">&#x02591; welcome</button>
-                    <button id = "abt">&#x02591; about me</button>
-                    <button id = "til">&#x02591; TIL</button>
-                    <button id = "digital_garden">&#x02591; digital gardens</button>
+            <div id="mainContainer" class="container">
+                <div id="blobs">
+                    <svg id="mainBlob1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#F2F4F85A" d="M45.3,-60.8C56.9,-54,63.3,-38.3,70.2,-21.7C77.1,-5.1,84.6,12.4,81.1,27.4C77.6,42.3,63.2,54.8,47.9,66.3C32.5,77.8,16.3,88.5,-0.2,88.8C-16.7,89.1,-33.3,78.9,-45.6,66.4C-57.9,53.9,-65.9,38.9,-68.9,23.8C-71.9,8.6,-70,-6.8,-64.6,-20.2C-59.2,-33.7,-50.2,-45.2,-38.8,-52C-27.4,-58.9,-13.7,-61.2,1.6,-63.4C16.9,-65.5,33.7,-67.6,45.3,-60.8Z"/>
+                    </svg>
+                    <svg  id="mainBlob2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#0F62FE2A" d="M43.8,-68.8C57.4,-59.5,69.4,-48.3,76.8,-34.4C84.2,-20.5,87,-3.8,82.4,10.2C77.9,24.2,65.9,35.5,54.4,45.3C43,55.1,32.1,63.5,20,66C8,68.6,-5.1,65.3,-20.4,63.5C-35.7,61.8,-53.3,61.6,-60.5,52.7C-67.7,43.9,-64.6,26.4,-66.3,10C-68,-6.5,-74.5,-21.7,-71.4,-34.4C-68.4,-47,-55.7,-57,-42.2,-66.2C-28.7,-75.5,-14.3,-84.1,0.4,-84.8C15.1,-85.4,30.3,-78,43.8,-68.8Z"/>
+                    </svg>
                 </div>
-                <div id = "terminal">
-                    <div class="terminalHeader">
-                        <button id="toggleBtn" class="mini"></button>
-                        <p>welcome to terminal sessions</p>
-                    </div>
-                    <div class="terminalBody">
-                        <div id="introContainer" class="hidden selected">
-                            <p>~ % <span class ="highlight">Hello! My name is Nicole Schwartz and I'm a visual artist and coder based in Munsee Lenape territory, also known as Bedstuy, Brooklyn</span></p>
-                            <p>~ % I started terminal sessions as a way of digging into the many complicated, often contradictory, feelings I hold around technology. While terminal sessions is a series of personal reflection, this practice is about information gathering, both external and internal. I ultimately hope to cultivate a space of collective reflection by leaning into personal unclarity.</p>
-                            <p>~ % Terminal sessions is hosted on a raspberry pi currently located in my bedroom. Some parts of this site are only accessible when in proximity to this location.</p>
-                            <p>~ % The goal of this is to generate thought on the concept of a "site", and what it means to be present on the internet.</p>
-                            <p>~ % Additionally, the appearance of this website is partially controlled by a number of touch sensors in my home. I have realized that our sense of touch is highly unstimulated while online, and wanted to explore a way of restoring this sense of touch to a digital presense.</p>
-                            <p>~ % </p>
-                            <p>~ % </p>
-                            <p>~ % The computer terminal is an interface for communicating with a computer. It is an essential tool used by coders for performing many computational tasks, both organizational and functional. While the word "terminal" means end, I'd like to reframe the computer terminal as an opening, an entry point for conversations with the computer.</p>
-                            <p>~ % Inspired by the computer terminal, terminal sessions was cultivated as a space for sharing reflections, experiences and imaginations around the world of computing. Like computer terminal sessions, each "session" will have a temporary existence before they are closed. Together, the sessions will be a personal, growing and shrinking archive. I hope it can be a small entry point for future conversations and connections.</p>
-                            <p>~ % This space is also inspired by the concept of a digital garden, meaning its design is playful, temporal, and personal. The entries will not be listed in chronological order. Rather they will appear and dissapear independently and are meant to be shared for a window. While in some ways this space will be unruly and generative, I am approaching it with care and intention. In doing so I hope to find some earthliness in the unsettling deepness of the internet.</p>
-                            <p>~ % </p>
-                            <p>~ % <span class="terminalCursor">&#9646;</span></p>
-                        </div>  
-                        <div id="abtContainer" class="hidden">
-                            <p>~% I explore ways we can create more accessible entry points for people to learn about computation via artist led technologies.</p>
-                            <p>~% I have many complicated feelings of technology - its curiosity and its distrust - it's a very classic love/hate relationship. </p>
-                            <p>~$ I dream of a world where technology is co-owned and created togther</p>
-                            <p>~$ A few of the technologsies I'm currently working with include GLSL, p5.js, Sonic Pi, raspberry Pi, and Pure Data</p>
-                            <p>~$</p>
-                            <p>~% More things I have worked on can be found at <a href="https://github.com/naschwar">github</a></p>
-                            <p>~% Reach me at <a href="mailto:14nicoleschwartz@gmail.com">14nicoleschwartz@gmail.com</a></p>
-                        </div> 
-                        <div id="gardenContainer" class = "hidden">
-                            <p>~ % </p>
-                            <p>~ % </p>
-                            <p>~ % </p>
-                        </div> 
-                        <div id="tilContainer" class="hidden">
-                            <p>~ % <span class ="highlight">A collection of the resources and people I've been learning from recently</span></p>
-                            <div class="tilSection">
-                                <p class="title">~ % Reading:</p>
-                                <p>~ % &nbsp;&nbsp;&nbsp;"Captivating Technology: Race, Carceral Technoscience, and Liberatory Imagination in Everyday Life" <span class = "author">- Ruha Benjamin</span></p>
-                                <p>~ %     "Software For Artists Book: Building Better Realities" </p>
-                                <p>~ %     "Glitch Feminism" <span class = "author">- Legacy Russel</span></p>
-                                <p>~ %<a href="https://branch.climateaction.tech/">Branch Magazine</a></p>
-                            </div>
-                            <div class="tilSection">
-                                <p class="title">~ % Listening to:</p>
-                                <p>~ % <a href="https://99percentinvisible.org">99% Invisible</a></p>
-                                <p>~ % <a href="https://directory.libsyn.com/shows/view/id/therednation">The Red Nation Podcast</a></p>
-                            </div> 
-                            <div class="tilSection">
-                                <p class="title">~ % Watching:</p>
-                                <p>~ %<a href="https://www.youtube.com/curiouslyminded">curiouslyminded</a></p>
-                                <p>~ %<a href="https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw">The Coding Train</a></p> 
-                            </div> 
-                        </div>
+                <div id="containerBody">
+                    <h2>welcome to terminal sessions</h2>
+                    <div id="introContainer" class="selected">
+                        <p>~ % <span class ="highlight">Hello! My name is Nicole Schwartz and I'm a visual artist and coder based in Munsee Lenape territory, also known as Bedstuy, Brooklyn</span></p>
+                        <p>~ % I started terminal sessions as a way of digging into the many complicated, often contradictory, feelings I hold around technology. While terminal sessions is a series of personal reflection, this practice is about information gathering, both external and internal. I ultimately hope to cultivate a space of collective reflection by leaning into personal unclarity.</p>
+                        <p>~ % Terminal sessions is hosted on a raspberry pi currently located in my bedroom. Some parts of this site are only accessible when in proximity to this location.</p>
+                        <p>~ % The goal of this is to generate thought on the concept of a "site", and what it means to be present on the internet.</p>
+                        <p>~ % Additionally, the appearance of this website is partially controlled by a number of touch sensors in my home. I have realized that our sense of touch is highly unstimulated while online, and wanted to explore a way of restoring this sense of touch to a digital presense.</p>
+                        <p>~ % </p>
+                        <p>~ % </p>
+                        <p>~ % The computer terminal is an interface for communicating with a computer. It is an essential tool used by coders for performing many computational tasks, both organizational and functional. While the word "terminal" means end, I'd like to reframe the computer terminal as an opening, an entry point for conversations with the computer.</p>
+                        <p>~ % Inspired by the computer terminal, terminal sessions was cultivated as a space for sharing reflections, experiences and imaginations around the world of computing. Like computer terminal sessions, each "session" will have a temporary existence before they are closed. Together, the sessions will be a personal, growing and shrinking archive. I hope it can be a small entry point for future conversations and connections.</p>
+                        <p>~ % This space is also inspired by the concept of a digital garden, meaning its design is playful, temporal, and personal. The entries will not be listed in chronological order. Rather they will appear and dissapear independently and are meant to be shared for a window. While in some ways this space will be unruly and generative, I am approaching it with care and intention. In doing so I hope to find some earthliness in the unsettling deepness of the internet.</p>
+                        <p>~ % </p>
+                        <p>~ % <span class="terminalCursor">&#9646;</span></p>
+                    </div>  
+                    <div id="abtContainer" class="hidden">
+                        <p>~% I explore ways we can create more accessible entry points for people to learn about computation via artist led technologies.</p>
+                        <p>~% I have many complicated feelings of technology - its curiosity and its distrust - it's a very classic love/hate relationship. </p>
+                        <p>~$ I dream of a world where technology is co-owned and created togther</p>
+                        <p>~$ A few of the technologsies I'm currently working with include GLSL, p5.js, Sonic Pi, raspberry Pi, and Pure Data</p>
+                        <p>~$</p>
+                        <p>~% More things I have worked on can be found at <a href="https://github.com/naschwar">github</a></p>
+                        <p>~% Reach me at <a href="mailto:14nicoleschwartz@gmail.com">14nicoleschwartz@gmail.com</a></p>
                     </div> 
+                    <div id="gardenContainer" class = "hidden">
+                        <p>~ % terminal sessions is a digital garden, meaning it is a playful, explorative space centering growth and building collective spaces for vulnerability, honest though, and knowledge sharing. </p>
+                        <p>~ % </p>
+                        <p>~ % </p>
+                    </div> 
+                    <div id="tilContainer" class="hidden">
+                        <p>~ % <span class ="highlight">A collection of the sites and sources I've been learning from recently</span></p>
+                        <div class="tilSection">
+                            <p class="title">~ % <span class ="highlight">Reading:</span></p>
+                            <p>~ % &nbsp;&nbsp;&nbsp;"Captivating Technology: Race, Carceral Technoscience, and Liberatory Imagination in Everyday Life"- Ruha Benjamin</p>
+                            <p>~ % &nbsp;&nbsp;&nbsp;"Software For Artists Book: Building Better Realities" </p>
+                            <p>~ % &nbsp;&nbsp;&nbsp;"Glitch Feminism" - Legacy Russel</p>
+                            <p>~ % &nbsp;&nbsp;&nbsp;<a href="https://branch.climateaction.tech/">Branch Magazine</a></p>
+                        </div>
+                        <div class="tilSection">
+                            <p class="title">~ % <span class ="highlight">Listening to:</span></p>
+                            <p>~ % &nbsp;&nbsp;&nbsp;<a href="https://99percentinvisible.org">99% Invisible</a></p>
+                            <p>~ % &nbsp;&nbsp;&nbsp;<a href="https://directory.libsyn.com/shows/view/id/therednation">The Red Nation Podcast</a></p>
+                        </div> 
+                        <div class="tilSection">
+                            <p class="title">~ % <span class ="highlight">Watching:</span></p>
+                            <p>~ % &nbsp;&nbsp;&nbsp;<a href="https://www.youtube.com/curiouslyminded">curiouslyminded</a></p>
+                            <p>~ % &nbsp;&nbsp;&nbsp;<a href="https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw">The Coding Train</a></p> 
+                        </div> 
+                    </div>
+                    <div id="tsContainer" class="hidden">
+                        <div id="TS">
+                            <h2>terminal sessions</h2>
+                            <div class="sessionMini"><div class="sessionSymbol">&#x2665;</div><span class="sessionTitle">reimaging the digital interface</span></div>
+                            <div class="sessionMini"><div class="sessionSymbol">&#x2665;</div><span class="sessionTitle">augmenting reality</span></div>
+                            <div class="sessionMini"><div class="sessionSymbol">&#x2665;</div><span class="sessionTitle">the colonization of the internet</span></div>
+                            <div class="sessionMini"><div class="sessionSymbol">&#x2665;</div><span class="sessionTitle">digitals cycles of consumption</span></div>
+                            <div class="sessionMini"><div class="sessionSymbol">&#x2665;</div><span class="sessionTitle">undoing code</span></div>                    <div class="sessionMini"><div class="sessionSymbol">&#x2665;</div><span class="sessionTitle">formlessness</span></div>
+                            <div class="sessionMini"><div class="sessionSymbol">&#x2665;</div><span class="sessionTitle">how can we make a less consumptive web</span></div>
+                            <div class="sessionMini"><div class="sessionSymbol">&#x2665;</div><span class="sessionTitle">an expanded approach to access</span></div>
+                        </div> 
+                    </div>
                 </div>
-                <div id="TS">
-                    <div class="sessionMini"><div class="sessionSymbol">&#x2665;</div><span class="sessionTitle">reimaging the digital interface</span></div>
-                    <div class="sessionMini"><div class="sessionSymbol">&#x2665;</div><span class="sessionTitle">augmenting reality</span></div>
-                    <div class="sessionMini"><div class="sessionSymbol">&#x2665;</div><span class="sessionTitle">the colonization of the internet</span></div>
-                    <div class="sessionMini"><div class="sessionSymbol">&#x2665;</div><span class="sessionTitle">digitals cycles of consumption</span></div>
-                    <div class="sessionMini"><div class="sessionSymbol">&#x2665;</div><span class="sessionTitle">undoing code</span></div>
-                    <div class="sessionMini"><div class="sessionSymbol">&#x2665;</div><span class="sessionTitle">formlessness</span></div>
-                    <div class="sessionMini"><div class="sessionSymbol">&#x2665;</div><span class="sessionTitle">how can we make a less consumptive web</span></div>
-                    <div class="sessionMini"><div class="sessionSymbol">&#x2665;</div><span class="sessionTitle">an expanded approach to access</span></div>
-                </div> 
+                </div>
         <div class="codeCont hidden">
             <div class="subsection" id="formlessness">
                 <h1 onclick="expandSection('formlessness')">Formlessness</h1>
